@@ -36,7 +36,7 @@ const volumes = {
 };
 
 async function main(argv) {
-	const options = yargs(hideBin(process.argv))
+	yargs(hideBin(process.argv))
 		.usage("Set some volume presets.")
 		.option("h", {
 			alias: "host",
@@ -60,13 +60,15 @@ async function main(argv) {
 			choices: ["auto", "loud", "normal", "quiet"],
 			description: "Volume to apply to clients not in `group`.",
 		})
-		.command(["auto", "$0"], "make it normal or quiet depending on what time it is")
-		.command("loud", "make it loud")
-		.command("normal", "make it a normal volume")
-		.command("quiet", "make it quiet")
+		.command(["auto", "$0"], "make it normal or quiet depending on what time it is", {}, (options) => run("auto", options))
+		.command("loud", "make it loud", {}, (options) => run("loud", options))
+		.command("normal", "make it a normal volume", {}, (options) => run("loud", options))
+		.command("quiet", "make it quiet", {}, (options) => run("loud", options))
 		.demandCommand(1, 1)
 		.parse();
+}
 
+async function run(command, options) {
 	const client = new SnapcastClient({
 		host: options.host,
 		port: options.port,
@@ -111,7 +113,6 @@ async function main(argv) {
 		const hour = new Date().getHours();
 		const autoVolume = (hour < 9 || hour >= 22) ? "quiet" : "normal";
 
-		const command = options._[0];
 		const volume = command === "auto" ? autoVolume : command;
 		const otherVolume = options.others === "auto" ? autoVolume : options.others;
 
