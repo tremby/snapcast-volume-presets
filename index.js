@@ -6,11 +6,11 @@ const volumes = {
 	desk: {
 		loud: 100,
 		normal: 100,
-		quiet: 40,
+		quiet: 50,
 	},
 	bathroom: {
 		loud: 20,
-		normal: 20,
+		normal: 15,
 		quiet: 8,
 	},
 	bedroom: {
