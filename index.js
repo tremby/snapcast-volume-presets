@@ -63,7 +63,7 @@ async function main(argv) {
 		.command(["auto", "$0"], "make it normal or quiet depending on what time it is", {}, (options) => run("auto", options))
 		.command("loud", "make it loud", {}, (options) => run("loud", options))
 		.command("normal", "make it a normal volume", {}, (options) => run("loud", options))
-		.command("quiet", "make it quiet", {}, (options) => run("loud", options))
+		.command("quiet", "make it quiet", {}, (options) => run("quiet", options))
 		.demandCommand(1, 1)
 		.parse();
 }
