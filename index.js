@@ -8,10 +8,10 @@ const volumes = {
 		normal: 100,
 		quiet: 50,
 	},
-	bathroom: {
-		loud: 20,
-		normal: 15,
-		quiet: 8,
+	storage: {
+		loud: 23,
+		normal: 18,
+		quiet: 10,
 	},
 	bedroom: {
 		loud: 50,
@@ -24,12 +24,12 @@ const volumes = {
 		quiet: 22,
 	},
 	lounge: {
-		loud: 50,
+		loud: 52,
 		normal: 36,
 		quiet: 24,
 	},
 	kitchen: {
-		loud: 40,
+		loud: 42,
 		normal: 30,
 		quiet: 18,
 	},
@@ -98,7 +98,7 @@ async function run(command, options) {
 	try {
 		const clientIds = {
 			desk: getClientByName("desk").id,
-			bathroom: getClientByName("bathroom").id,
+			storage: getClientByName("storage").id,
 			bedroom: getClientByName("bedroom").id,
 			shower: getClientByName("shower").id,
 			lounge: getClientByName("lounge").id,
