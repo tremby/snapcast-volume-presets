@@ -3,32 +3,32 @@ const yargs = require("yargs/yargs");
 const { hideBin } = require("yargs/helpers");
 
 const volumes = {
-	desk: {
+	Desk: {
 		loud: 100,
 		normal: 100,
 		quiet: 50,
 	},
-	storage: {
+	Storage: {
 		loud: 23,
 		normal: 18,
 		quiet: 10,
 	},
-	bedroom: {
+	Bedroom: {
 		loud: 50,
 		normal: 35,
 		quiet: 26,
 	},
-	shower: {
+	Shower: {
 		loud: 45,
 		normal: 30,
 		quiet: 22,
 	},
-	lounge: {
+	Lounge: {
 		loud: 52,
 		normal: 36,
 		quiet: 24,
 	},
-	kitchen: {
+	Kitchen: {
 		loud: 42,
 		normal: 30,
 		quiet: 18,
@@ -97,12 +97,12 @@ async function run(command, options) {
 
 	try {
 		const clientIds = {
-			desk: getClientByName("desk").id,
-			storage: getClientByName("storage").id,
-			bedroom: getClientByName("bedroom").id,
-			shower: getClientByName("shower").id,
-			lounge: getClientByName("lounge").id,
-			kitchen: getClientByName("kitchen").id,
+			Desk: getClientByName("Desk").id,
+			Storage: getClientByName("Storage").id,
+			Bedroom: getClientByName("Bedroom").id,
+			Shower: getClientByName("Shower").id,
+			Lounge: getClientByName("Lounge").id,
+			Kitchen: getClientByName("Kitchen").id,
 		};
 		const clientVolumes = Object.entries(clientIds).reduce((acc, [name, id]) => ({
 			...acc,
