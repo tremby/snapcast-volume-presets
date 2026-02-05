@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const SnapcastClient = require("snapcast-client");
 const yargs = require("yargs/yargs");
 const { hideBin } = require("yargs/helpers");

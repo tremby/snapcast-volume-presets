@@ -1,4 +1,8 @@
 {
+  "name": "snapcast-volume-presets",
+  "version": "0.1.0",
+  "description": "Set snapcast volumes in bulk to preset levels",
+  "bin": "snapcast-volume-presets",
   "dependencies": {
     "snapcast-client": "^0.0.5",
     "yargs": "^17.7.2"
